@@ -1,81 +1,162 @@
-# Browser History Management System
+# 🌐 Browser History Management System
 
-A menu-driven C++ DSA project that manages browser history using a **Doubly Linked List**.
+A menu-driven **Browser History Management System** developed in C++ using the **Doubly Linked List** data structure. This project simulates basic browser navigation and history management through four independent modules integrated into a single executable program.
 
-## Modules
+## 🚀 Features
 
-1. **Visit Page** — adds a URL. Visiting a new page after navigating backward removes the forward history.
-2. **Back and Forward Navigation** — moves through the previous and next nodes in constant time.
-3. **History Display and Search** — displays all visited URLs, marks the current page, and searches URLs without case sensitivity.
-4. **History Deletion** — deletes a selected entry or clears the complete history.
+The project consists of four independent modules:
 
-## Project structure
+### 1. Visit Page Module
+- Visit and add new website URLs.
+- Dynamically create new linked-list nodes.
+- Automatically remove forward history when visiting a new page after navigating backward.
+
+### 2. Back and Forward Navigation Module
+- Navigate to previously visited pages.
+- Move forward to recently visited pages.
+- Maintain the current page using pointer manipulation.
+- Handle navigation boundaries safely.
+
+### 3. History Display and Search Module
+- Display complete browsing history.
+- Highlight the currently active page.
+- Search URLs using keywords.
+- Support case-insensitive searching.
+
+### 4. History Deletion Module
+- Delete a specific history entry by its position.
+- Clear the complete browsing history.
+- Maintain proper linked-list connections after deletion.
+- Automatically update the current page when necessary.
+
+## 🛠️ Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| C++ | Core programming language |
+| Doubly Linked List | Browser history management |
+| Pointers | Backward and forward navigation |
+| Dynamic Memory Allocation | Runtime node creation |
+| OOP | Encapsulation and modular design |
+
+## 📂 Project Structure
 
 ```text
 Browser-History-Management/
+│
 ├── main.cpp
+│
 ├── include/
 │   ├── browser_history.h
 │   └── node.h
+│
 ├── modules/
 │   ├── visit_page.cpp
 │   ├── navigation.cpp
 │   ├── history_display_search.cpp
 │   └── history_deletion.cpp
+│
 ├── README.md
 └── .gitignore
 ```
 
-## Requirements
+## ⚙️ How to Run
 
-- C++11 or later
-- g++ or clang++
+### Prerequisites
+- C++ compiler (GCC or Clang)
+- C++17 support
+- Terminal or any C++ IDE
 
-## Compile
+### Step 1: Clone the Repository
 
-Run this command from the project root:
+```bash
+git clone https://github.com/YOUR-USERNAME/Browser-History-Management.git
+```
+
+### Step 2: Navigate to the Project
+
+```bash
+cd Browser-History-Management
+```
+
+### Step 3: Compile All Modules Together
 
 ```bash
 g++ -std=c++17 main.cpp modules/*.cpp -Iinclude -o browser
 ```
 
-## Run
+### Step 4: Execute the Program
 
-On macOS/Linux:
-
+**macOS / Linux**
 ```bash
 ./browser
 ```
 
-On Windows (MinGW):
-
+**Windows (MinGW)**
 ```bash
 g++ -std=c++17 main.cpp modules/*.cpp -Iinclude -o browser.exe
 browser.exe
 ```
 
-## DSA concepts
+## 🖥️ Application Menu
 
-- Doubly Linked List
-- Dynamic memory allocation (`new` and `delete`)
-- Pointer manipulation
-- Traversal, insertion and deletion
-- Searching
+```text
+========================================
+       BROWSER HISTORY MANAGEMENT
+========================================
+1. Visit New Page
+2. Go Back
+3. Go Forward
+4. Display Browser History
+5. Search History
+6. Delete History Entry
+7. Clear All History
+8. Show Current Page
+9. Exit
+========================================
+Enter your choice:
+```
 
-## Time complexity
+## 🧠 Data Structure Explanation
 
-| Operation | Time complexity |
-|---|---:|
-| Back / Forward | O(1) |
-| Visit page (excluding discarded forward entries) | O(k), where k is the number of forward entries removed |
-| Display history | O(n) |
-| Search history | O(n) |
-| Delete by position | O(n) |
-| Clear history | O(n) |
+This project uses a **Doubly Linked List**, where every node contains:
 
-## Notes
+- `url` – Stores the website address.
+- `prev` – Points to the previous visited page.
+- `next` – Points to the next visited page.
 
-- All modules are compiled together into one executable.
-- Only `main.cpp` contains the program entry point (`main()`).
-- The project stores history in memory; it does not persist history after the program exits.
-# browser-history-management
+Each node is connected in both directions, making backward and forward navigation efficient.
+
+## ⏱️ Time Complexity
+
+| Operation | Time Complexity |
+|---|---|
+| Back Navigation | O(1) |
+| Forward Navigation | O(1) |
+| Visit Page | O(k), where k is the number of forward entries removed |
+| Display History | O(n) |
+| Search History | O(n) |
+| Delete History Entry | O(n) |
+| Clear History | O(n) |
+
+## 🎯 Learning Outcomes
+
+Through this project, the following concepts are demonstrated:
+
+- Implementation of Doubly Linked Lists.
+- Dynamic memory allocation and deallocation.
+- Pointer manipulation and node connections.
+- Insertion, deletion, and traversal operations.
+- Searching techniques.
+- Modular programming in C++.
+- Object-Oriented Programming fundamentals.
+
+## ⚠️ Limitations
+
+- Browsing history is stored in memory and is not saved after the program exits.
+- This is a console-based simulation, not a real web browser.
+- Website URLs are stored as strings; the program does not open websites.
+
+## 👨‍💻 Project Information
+
+**Project
