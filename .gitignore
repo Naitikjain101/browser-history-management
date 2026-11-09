@@ -1,0 +1,10 @@
+# Compiled binaries
+browser
+browser.exe
+*.o
+*.out
+
+# IDE/editor files
+.vscode/
+.idea/
+.DS_Store
